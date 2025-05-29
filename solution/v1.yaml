@@ -1,24 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mydeployment
+  name: merwan
+  annotations: submitted-by:merwan-juneydi-ugr0816
   labels:
-    app: mywebapp
+    app: merwanweb
     tier: frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mywebapp
+      app: merwanweb
       tier: frontend
   template:
     metadata:
       labels:
-        app: mywebapp
+        app: merwanweb
         tier: frontend
     spec: # Pod spec
       containers:
-      - name: mycontainer
-        image: devopsjourney1/mywebapp
-        ports:
-        - containerPort: 80
+        - name: mycontainer
+          image: devopsjourney1/merwanweb
+          ports:
+            - containerPort: 80
